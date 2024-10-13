@@ -28,20 +28,33 @@ public class GunShooting : MonoBehaviour
 
     void Fire()
     {
-        
-         if(Physics.Raycast(shootingPoint.transform.position, shootingPoint.transform.forward, out hit, range)) 
-         {
-         
+
+        if (Physics.Raycast(shootingPoint.transform.position, shootingPoint.transform.forward, out hit, range))
+        {
+            Debug.Log("Hit: " + hit.transform.name);
+
             if (hit.transform.CompareTag("enemy"))
             {
                 enemy = hit.transform.GetComponent<Enemy>();
-                if (enemy != null) 
+                if (enemy != null)
                 {
+                    Debug.Log("Enemy found! Calling Die method.");
                     enemy.Die();
                 }
+                else
+                {
+                    Debug.Log("Enemy component not found.");
+                }
             }
-            
-         }
-       
+            else
+            {
+                Debug.Log("Hit object is not an enemy.");
+            }
+        }
+        else
+        {
+            Debug.Log("Raycast did not hit anything.");
+        }
+
     }
 }
