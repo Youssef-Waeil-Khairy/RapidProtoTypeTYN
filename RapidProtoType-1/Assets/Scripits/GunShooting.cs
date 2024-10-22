@@ -12,6 +12,10 @@ public class GunShooting : MonoBehaviour
 
     Enemy enemy;
 
+    public GameObject muzzleFlash;
+
+    public Transform muzzlePossition;
+
     void Start()
     {
         
@@ -28,6 +32,11 @@ public class GunShooting : MonoBehaviour
 
     void Fire()
     {
+        GameObject muzzleFlashInstance = Instantiate(muzzleFlash, muzzlePossition.position, muzzlePossition.rotation);  
+
+        
+        Destroy(muzzleFlashInstance, 0.1f);
+
 
         if (Physics.Raycast(shootingPoint.transform.position, shootingPoint.transform.forward, out hit, range))
         {
