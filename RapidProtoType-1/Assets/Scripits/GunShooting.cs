@@ -42,8 +42,10 @@ public class GunShooting : MonoBehaviour
         {
             Debug.Log("Hit: " + hit.transform.name);
 
+            //Killables
             if (hit.transform.CompareTag("enemy"))
             {
+                
                 enemy = hit.transform.GetComponent<Enemy>();
                 if (enemy != null)
                 {
@@ -54,7 +56,12 @@ public class GunShooting : MonoBehaviour
                 {
                     Debug.Log("Enemy component not found.");
                 }
+
+                ScoreSystem.currentScore += 10;
             }
+
+
+            //BullsEye
             else if (hit.transform.CompareTag("BullsEye"))
             {
                 BullsEyes bullsEyes = hit.transform.GetComponent<BullsEyes>();
@@ -66,6 +73,7 @@ public class GunShooting : MonoBehaviour
                 {
                     Debug.Log("Not found");
                 }
+                ScoreSystem.currentScore += 10;
             }
         }
         else
