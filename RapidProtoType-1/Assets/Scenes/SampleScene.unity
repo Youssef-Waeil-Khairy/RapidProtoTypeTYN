@@ -852,9 +852,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1337297640985502890, guid: 038bd0979bd521348a11e0afea2d757d, type: 3}
+      propertyPath: m_TagString
+      value: BullsEye
+      objectReference: {fileID: 0}
+    - target: {fileID: 4225843798708639113, guid: 038bd0979bd521348a11e0afea2d757d, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6991942864851466443, guid: 038bd0979bd521348a11e0afea2d757d, type: 3}
       propertyPath: m_Name
       value: bullseye target (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6991942864851466443, guid: 038bd0979bd521348a11e0afea2d757d, type: 3}
+      propertyPath: m_TagString
+      value: BullsEye
       objectReference: {fileID: 0}
     - target: {fileID: 7657120270137434737, guid: 038bd0979bd521348a11e0afea2d757d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -903,6 +915,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6991942864851466443, guid: 038bd0979bd521348a11e0afea2d757d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 556031256}
+    - targetCorrespondingSourceObject: {fileID: 6991942864851466443, guid: 038bd0979bd521348a11e0afea2d757d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 556031257}
   m_SourcePrefab: {fileID: 100100000, guid: 038bd0979bd521348a11e0afea2d757d, type: 3}
 --- !u!1 &556031255 stripped
 GameObject:
@@ -930,6 +945,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &556031257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 556031255}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f0c4dcc7dbf5f74ea810f11ecbbdde2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 556031256}
 --- !u!1 &640207041 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4260021155387469253, guid: 8ec4cfd3f7f261d4ebb9097453535dec, type: 3}

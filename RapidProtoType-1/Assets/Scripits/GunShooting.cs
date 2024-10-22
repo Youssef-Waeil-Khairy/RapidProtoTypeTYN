@@ -55,9 +55,17 @@ public class GunShooting : MonoBehaviour
                     Debug.Log("Enemy component not found.");
                 }
             }
-            else
+            else if (hit.transform.CompareTag("BullsEye"))
             {
-                Debug.Log("Hit object is not an enemy.");
+                BullsEyes bullsEyes = hit.transform.GetComponent<BullsEyes>();
+                if(bullsEyes != null)
+                {
+                    bullsEyes.Hit();
+                }
+                else
+                {
+                    Debug.Log("Not found");
+                }
             }
         }
         else
