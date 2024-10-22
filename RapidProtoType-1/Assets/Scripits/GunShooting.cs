@@ -5,16 +5,19 @@ using UnityEngine;
 public class GunShooting : MonoBehaviour
 {
     public float range = 100f;
-
-    public Camera shootingPoint;
-
     RaycastHit hit;
 
-    Enemy enemy;
 
+    public Camera shootingPoint;
+    public AudioSource shootAudio;
     public GameObject muzzleFlash;
-
     public Transform muzzlePossition;
+
+    Enemy enemy;
+    public AudioSource enmeyAudio;
+    public AudioSource metalAudio;
+
+   
 
     void Start()
     {
@@ -27,6 +30,7 @@ public class GunShooting : MonoBehaviour
         if(Input.GetButtonDown("Fire1"))
         {
             Fire();
+            
         }
     }
 
@@ -37,6 +41,7 @@ public class GunShooting : MonoBehaviour
         
         Destroy(muzzleFlashInstance, 0.1f);
 
+        PlayShootSound();
 
         if (Physics.Raycast(shootingPoint.transform.position, shootingPoint.transform.forward, out hit, range))
         {
@@ -50,7 +55,10 @@ public class GunShooting : MonoBehaviour
                 if (enemy != null)
                 {
                     Debug.Log("Enemy found! Calling Die method.");
+
                     enemy.Die();
+
+                    PlayEnemySound();
                 }
                 else
                 {
@@ -68,6 +76,9 @@ public class GunShooting : MonoBehaviour
                 if(bullsEyes != null)
                 {
                     bullsEyes.Hit();
+
+                    PlayMetalSound();
+
                 }
                 else
                 {
@@ -80,6 +91,33 @@ public class GunShooting : MonoBehaviour
         {
             Debug.Log("Raycast did not hit anything.");
         }
+
+
+
+        void PlayShootSound()
+        {
+            if (shootAudio != null)
+            {
+                shootAudio.Play(); 
+            }
+        }
+
+        void PlayEnemySound()
+        {
+            if (enmeyAudio != null)
+            {
+                enmeyAudio.Play();
+            }
+        }
+
+        void PlayMetalSound()
+        {
+            if (metalAudio != null)
+            {
+                metalAudio.Play();
+            }
+        }
+
 
     }
 }

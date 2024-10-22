@@ -16,6 +16,8 @@ public class WalkingSystem : MonoBehaviour
 
     private Vector2 direction = Vector2.zero;
 
+    public AudioSource walkingSound;
+
     private void OnEnable()
     {
         wASD.Enable();
@@ -44,7 +46,24 @@ public class WalkingSystem : MonoBehaviour
         //Application
         transform.rotation = Quaternion.Euler(0, MouseX, 0);
         Camera.main.transform.rotation = Quaternion.Euler(-MouseY, MouseX, 0);
+
+
+        if (direction.magnitude > 0) 
+        {
+            if (!walkingSound.isPlaying)
+            {
+                walkingSound.Play();
+            }
+            else
+            {
+                walkingSound.Stop();
+            }
+
+        }
+        
     }
+
+
 
     private void FixedUpdate()
     {
