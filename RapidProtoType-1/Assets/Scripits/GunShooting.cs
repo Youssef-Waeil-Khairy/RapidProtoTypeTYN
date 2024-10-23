@@ -75,7 +75,7 @@ public class GunShooting : MonoBehaviour
                 BullsEyes bullsEyes = hit.transform.GetComponent<BullsEyes>();
                 if(bullsEyes != null)
                 {
-                    bullsEyes.Hit();
+                    bullsEyes.Hit(hit.point);
 
                     PlayMetalSound();
 

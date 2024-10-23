@@ -6,9 +6,19 @@ public class BullsEyes : MonoBehaviour
 {
     public Animator animator;
 
-    public void Hit()
+    public void Hit(Vector3 position)
     {
-        StartCoroutine(PlayAnimationForduration(3f));  
+        if (position.y > transform.position.y)
+        {
+            animator.SetTrigger("Die");
+
+        }
+        else
+        {
+            animator.SetTrigger("Die2");
+
+        }
+        //StartCoroutine(PlayAnimationForduration(3f));  
     }
 
     private IEnumerator PlayAnimationForduration(float duration)
