@@ -4,15 +4,20 @@ using UnityEngine;
 
 public class _cameraSwitcher : MonoBehaviour
 {
-    // Start is called before the first frame update
+    // Array of cameras attached to the enemies
+    // Keeps track of the currently active camera (int)
+
     void Start()
     {
-        
+        // Ensure only the first camera is enabled at the start (for loop?)
     }
-
-    // Update is called once per frame
     void Update()
     {
-        
+        // just use if statement?
+
+        // Check if the user presses a specific key 
+        // Disable the current camera
+        // Move to the next camera
+        // Enable the new current camera
     }
 }
