@@ -17,7 +17,8 @@ public class GunShooting : MonoBehaviour
     public AudioSource enmeyAudio;
     public AudioSource metalAudio;
 
-   
+    public WeaponScriptable weapon;
+    [SerializeField] private bool isFireable = true;
 
     void Start()
     {
@@ -27,7 +28,7 @@ public class GunShooting : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetButtonDown("Fire1"))
+        if(Input.GetButtonDown("Fire1") && isFireable)
         {
             Fire();
             
@@ -36,13 +37,16 @@ public class GunShooting : MonoBehaviour
 
     void Fire()
     {
-        GameObject muzzleFlashInstance = Instantiate(muzzleFlash, muzzlePossition.position, muzzlePossition.rotation);  
+        isFireable = false;
 
-        
+        // Muzlle Flash
+        GameObject muzzleFlashInstance = Instantiate(muzzleFlash, muzzlePossition.position, muzzlePossition.rotation);  
         Destroy(muzzleFlashInstance, 0.1f);
 
+        // Shoot SFX
         PlayShootSound();
 
+        // Bullet hitting something
         if (Physics.Raycast(shootingPoint.transform.position, shootingPoint.transform.forward, out hit, range))
         {
             Debug.Log("Hit: " + hit.transform.name);
@@ -68,7 +72,6 @@ public class GunShooting : MonoBehaviour
                 ScoreSystem.currentScore += 10;
             }
 
-
             //BullsEye
             else if (hit.transform.CompareTag("BullsEye"))
             {
@@ -92,13 +95,15 @@ public class GunShooting : MonoBehaviour
             Debug.Log("Raycast did not hit anything.");
         }
 
+        // Fire rate delay
+        StartCoroutine(FireDelay());
 
-
+        #region SFX
         void PlayShootSound()
         {
             if (shootAudio != null)
             {
-                shootAudio.Play(); 
+                shootAudio.Play();
             }
         }
 
@@ -116,8 +121,13 @@ public class GunShooting : MonoBehaviour
             {
                 metalAudio.Play();
             }
-        }
+        } 
+        #endregion
+    }
 
-
+    public IEnumerator FireDelay()
+    {
+        yield return new WaitForSeconds(weapon.FireRate);
+        isFireable = true;
     }
 }
