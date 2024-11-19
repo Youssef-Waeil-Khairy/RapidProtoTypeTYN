@@ -17,28 +17,28 @@ public class GunShooting : MonoBehaviour
     public AudioSource enmeyAudio;
     public AudioSource metalAudio;
 
-   
+    SpawnBalloon spawnBalloon;
 
     void Start()
     {
-        
+        spawnBalloon = FindObjectOfType<SpawnBalloon>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("Fire1"))
         {
             Fire();
-            
+
         }
     }
 
     void Fire()
     {
-        GameObject muzzleFlashInstance = Instantiate(muzzleFlash, muzzlePossition.position, muzzlePossition.rotation);  
+        GameObject muzzleFlashInstance = Instantiate(muzzleFlash, muzzlePossition.position, muzzlePossition.rotation);
 
-        
+
         Destroy(muzzleFlashInstance, 0.1f);
 
         PlayShootSound();
@@ -50,7 +50,7 @@ public class GunShooting : MonoBehaviour
             //Killables
             if (hit.transform.CompareTag("enemy"))
             {
-                
+
                 enemy = hit.transform.GetComponent<Enemy>();
                 if (enemy != null)
                 {
@@ -73,7 +73,7 @@ public class GunShooting : MonoBehaviour
             else if (hit.transform.CompareTag("BullsEye"))
             {
                 BullsEyes bullsEyes = hit.transform.GetComponent<BullsEyes>();
-                if(bullsEyes != null)
+                if (bullsEyes != null)
                 {
                     bullsEyes.Hit(hit.point);
 
@@ -86,38 +86,47 @@ public class GunShooting : MonoBehaviour
                 }
                 ScoreSystem.currentScore += 10;
             }
+
+            //Balloon shooting
+            else if (hit.transform.CompareTag("Balloon"))
+            {
+                StartCoroutine(spawnBalloon.Spawn());
+                Destroy(hit.collider.gameObject);
+            }
         }
+
+       
         else
         {
             Debug.Log("Raycast did not hit anything.");
         }
-
-
-
-        void PlayShootSound()
-        {
-            if (shootAudio != null)
-            {
-                shootAudio.Play(); 
-            }
-        }
-
-        void PlayEnemySound()
-        {
-            if (enmeyAudio != null)
-            {
-                enmeyAudio.Play();
-            }
-        }
-
-        void PlayMetalSound()
-        {
-            if (metalAudio != null)
-            {
-                metalAudio.Play();
-            }
-        }
-
-
     }
+
+
+
+    void PlayShootSound()
+    {
+        if (shootAudio != null)
+        {
+            shootAudio.Play();
+        }
+    }
+
+    void PlayEnemySound()
+    {
+        if (enmeyAudio != null)
+        {
+            enmeyAudio.Play();
+        }
+    }
+
+    void PlayMetalSound()
+    {
+        if (metalAudio != null)
+        {
+            metalAudio.Play();
+        }
+    }
+
+
 }

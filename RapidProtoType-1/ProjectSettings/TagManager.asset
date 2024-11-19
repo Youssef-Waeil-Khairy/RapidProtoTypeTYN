@@ -6,6 +6,7 @@ TagManager:
   tags:
   - enemy
   - BullsEye
+  - Balloon
   layers:
   - Default
   - TransparentFX
