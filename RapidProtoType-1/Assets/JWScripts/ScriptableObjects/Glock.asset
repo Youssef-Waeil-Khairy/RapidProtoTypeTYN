@@ -10,9 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0034cb88f3a3ea14ca502fe900798b85, type: 3}
-  m_Name: MachineGun
+  m_Name: Glock
   m_EditorClassIdentifier: 
-  Name: Machine Gun
-  MagazineCapacity: 50
-  ReloadTime: 5
-  isAutomatic: 1
+  Name: Glock
+  FireRate: 0.5

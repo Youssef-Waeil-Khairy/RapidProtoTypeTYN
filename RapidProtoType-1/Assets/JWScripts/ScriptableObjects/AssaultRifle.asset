@@ -13,4 +13,6 @@ MonoBehaviour:
   m_Name: AssaultRifle
   m_EditorClassIdentifier: 
   Name: Assualt Rifle
-  FireRate: 1
+  MagazineCapacity: 10
+  ReloadTime: 1
+  isAutomatic: 0

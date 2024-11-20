@@ -7,7 +7,6 @@ public class GunShooting : MonoBehaviour
     public float range = 100f;
     RaycastHit hit;
 
-
     public Camera shootingPoint;
     public AudioSource shootAudio;
     public GameObject muzzleFlash;
@@ -18,6 +17,7 @@ public class GunShooting : MonoBehaviour
     public AudioSource metalAudio;
 
     public WeaponScriptable weapon;
+    [SerializeField] private int currentMagazine = 1;
     [SerializeField] private bool isFireable = true;
 
     void Start()
@@ -28,16 +28,34 @@ public class GunShooting : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetButtonDown("Fire1") && isFireable)
+        if (isFireable)
         {
-            Fire();
-            
+            if (weapon.isAutomatic)
+            {
+                if (Input.GetButton("Fire1"))
+                {
+                    Fire();
+                }
+            }
+            else 
+            {
+                if (Input.GetButtonDown("Fire1"))
+                {
+                    Fire();
+                }
+            }
         }
     }
 
     void Fire()
     {
-        isFireable = false;
+        //isFireable = false;
+        currentMagazine--;
+        if (currentMagazine < 0)
+        {
+            StartCoroutine(Reload());
+            return;
+        }
 
         // Muzlle Flash
         GameObject muzzleFlashInstance = Instantiate(muzzleFlash, muzzlePossition.position, muzzlePossition.rotation);  
@@ -96,7 +114,7 @@ public class GunShooting : MonoBehaviour
         }
 
         // Fire rate delay
-        StartCoroutine(FireDelay());
+        StartCoroutine(Reload());
 
         #region SFX
         void PlayShootSound()
@@ -125,9 +143,16 @@ public class GunShooting : MonoBehaviour
         #endregion
     }
 
-    public IEnumerator FireDelay()
+    public void WeaponSwitched()
     {
-        yield return new WaitForSeconds(weapon.FireRate);
+        StopAllCoroutines();
+        isFireable = true;
+    }
+
+    public IEnumerator Reload()
+    {
+        yield return new WaitForSeconds(weapon.ReloadTime);
+        currentMagazine = weapon.MagazineCapacity;
         isFireable = true;
     }
 }
