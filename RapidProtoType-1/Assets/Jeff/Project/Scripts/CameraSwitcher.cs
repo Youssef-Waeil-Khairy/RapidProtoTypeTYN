@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class _cameraSwitcher : MonoBehaviour
+public class CameraSwitcher : MonoBehaviour
 {
     // Array of cameras attached to the enemies
     // Keeps track of the currently active camera (int)

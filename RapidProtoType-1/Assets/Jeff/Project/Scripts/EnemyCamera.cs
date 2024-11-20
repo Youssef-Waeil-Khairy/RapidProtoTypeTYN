@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class _enemyCamera : MonoBehaviour
+public class EnemyCamera : MonoBehaviour
 {
     public Transform playerTransform; // Reference to the player transform
 
