@@ -7,7 +7,6 @@ public class GunShooting : MonoBehaviour
     public float range = 100f;
     RaycastHit hit;
 
-
     public Camera shootingPoint;
     public AudioSource shootAudio;
     public GameObject muzzleFlash;
@@ -17,7 +16,9 @@ public class GunShooting : MonoBehaviour
     public AudioSource enmeyAudio;
     public AudioSource metalAudio;
 
-   
+    public WeaponScriptable weapon;
+    [SerializeField] private int currentMagazine = 1;
+    [SerializeField] private bool isFireable = true;
 
     void Start()
     {
@@ -27,22 +28,43 @@ public class GunShooting : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetButtonDown("Fire1"))
+        if (isFireable)
         {
-            Fire();
-            
+            if (weapon.isAutomatic)
+            {
+                if (Input.GetButton("Fire1"))
+                {
+                    Fire();
+                }
+            }
+            else 
+            {
+                if (Input.GetButtonDown("Fire1"))
+                {
+                    Fire();
+                }
+            }
         }
     }
 
     void Fire()
     {
-        GameObject muzzleFlashInstance = Instantiate(muzzleFlash, muzzlePossition.position, muzzlePossition.rotation);  
+        //isFireable = false;
+        currentMagazine--;
+        if (currentMagazine < 0)
+        {
+            StartCoroutine(Reload());
+            return;
+        }
 
-        
+        // Muzlle Flash
+        GameObject muzzleFlashInstance = Instantiate(muzzleFlash, muzzlePossition.position, muzzlePossition.rotation);  
         Destroy(muzzleFlashInstance, 0.1f);
 
+        // Shoot SFX
         PlayShootSound();
 
+        // Bullet hitting something
         if (Physics.Raycast(shootingPoint.transform.position, shootingPoint.transform.forward, out hit, range))
         {
             Debug.Log("Hit: " + hit.transform.name);
@@ -68,7 +90,6 @@ public class GunShooting : MonoBehaviour
                 ScoreSystem.currentScore += 10;
             }
 
-
             //BullsEye
             else if (hit.transform.CompareTag("BullsEye"))
             {
@@ -92,13 +113,15 @@ public class GunShooting : MonoBehaviour
             Debug.Log("Raycast did not hit anything.");
         }
 
+        // Fire rate delay
+        StartCoroutine(Reload());
 
-
+        #region SFX
         void PlayShootSound()
         {
             if (shootAudio != null)
             {
-                shootAudio.Play(); 
+                shootAudio.Play();
             }
         }
 
@@ -116,8 +139,20 @@ public class GunShooting : MonoBehaviour
             {
                 metalAudio.Play();
             }
-        }
+        } 
+        #endregion
+    }
 
+    public void WeaponSwitched()
+    {
+        StopAllCoroutines();
+        isFireable = true;
+    }
 
+    public IEnumerator Reload()
+    {
+        yield return new WaitForSeconds(weapon.ReloadTime);
+        currentMagazine = weapon.MagazineCapacity;
+        isFireable = true;
     }
 }
