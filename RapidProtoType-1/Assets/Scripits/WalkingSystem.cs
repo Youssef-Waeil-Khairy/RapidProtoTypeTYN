@@ -47,7 +47,7 @@ public class WalkingSystem : MonoBehaviour
         transform.rotation = Quaternion.Euler(0, MouseX, 0);
         Camera.main.transform.rotation = Quaternion.Euler(-MouseY, MouseX, 0);
 
-
+        /*
         if (direction.magnitude > 0) 
         {
             if (!walkingSound.isPlaying)
@@ -60,7 +60,7 @@ public class WalkingSystem : MonoBehaviour
             }
 
         }
-        
+        */
     }
 
 
