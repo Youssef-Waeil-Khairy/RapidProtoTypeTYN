@@ -7,11 +7,12 @@ TagManager:
   - enemy
   - BullsEye
   - Balloon
+  - CCTV
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - CCTVEffects
   - Water
   - UI
   - 
