@@ -16,7 +16,7 @@ public class WalkingSystem : MonoBehaviour
 
     private Vector2 direction = Vector2.zero;
 
-    public AudioSource walkingSound;
+   // public AudioSource walkingSound;
 
     private void OnEnable()
     {
@@ -39,13 +39,13 @@ public class WalkingSystem : MonoBehaviour
         direction = wASD.ReadValue<Vector2>();
 
         //Camera Orientation
-        MouseX += Input.GetAxis("Mouse X");
-        MouseY += Input.GetAxis("Mouse Y");
-        MouseY = Mathf.Clamp(MouseY, -45, 60);
+       // MouseX += Input.GetAxis("Mouse X");
+       // MouseY += Input.GetAxis("Mouse Y");
+     //   MouseY = Mathf.Clamp(MouseY, -45, 60);
 
         //Application
-        transform.rotation = Quaternion.Euler(0, MouseX, 0);
-        Camera.main.transform.rotation = Quaternion.Euler(-MouseY, MouseX, 0);
+       // transform.rotation = Quaternion.Euler(0, MouseX, 0);
+       // Camera.main.transform.rotation = Quaternion.Euler(-MouseY, MouseX, 0);
 
         /*
         if (direction.magnitude > 0) 
