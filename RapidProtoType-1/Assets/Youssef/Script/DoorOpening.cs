@@ -17,17 +17,18 @@ public class DoorOpening : MonoBehaviour
         doorOepning.SetBool(doorBool, false);
     }
 
+    // scripit will be attached to every key, if the key collides with player , it will open the door that is aiisgne din inspector
     private void OnTriggerEnter(Collider collision)
     {
-        if(collision.CompareTag("Key"))
+        if(collision.CompareTag("Player"))
         {
             if (doorOepning != null)
             {
                 doorOepning.SetBool(doorBool, true);
             }
 
-            //destroys the key gameobject
-            Destroy(collision.gameObject);
+            //destory the coin once its colided
+           Destroy(gameObject);
         }
         
     }
