@@ -29,10 +29,10 @@ public class GaurdProximitites : MonoBehaviour
     {
         if(!isWaiting) 
         {
-            // then carry one ur patrol duty
+            CarryOn();
         }
         
-        //search for player 
+        DetectPlayer();
     }
 
     void CarryOn()
@@ -65,7 +65,7 @@ public class GaurdProximitites : MonoBehaviour
         isWaiting = false;
     }
 
-    public void OnDestroy()
+    public void DetectPlayer()
     {
         // get vector from garud to player
         Vector3 playerPosition = player.position - transform.position;
@@ -81,6 +81,25 @@ public class GaurdProximitites : MonoBehaviour
                 Debug.Log("u failed");
             }
         }
+
+    }
+
+    private void OnDrawGizmos()
+    {
+        //helps visualztion for player
+        Gizmos.color = Color.red;
+
+        //draws curves
+        Vector3 forward = transform.forward * proximityRadius;
+        Quaternion leftRotation = Quaternion.Euler(0, -proximityAngle / 2f, 0);
+        Quaternion rightRotation = Quaternion.Euler(0, proximityAngle / 2f, 0);
+        Vector3 leftSide = leftRotation * forward;
+        Vector3 rightSide = rightRotation * forward;
+
+        Gizmos.DrawLine(transform.position, transform.position + leftSide);
+        Gizmos.DrawLine(transform.position, transform.position + rightSide);
+        Gizmos.DrawWireSphere(transform.position, proximityRadius);
+
 
     }
 
