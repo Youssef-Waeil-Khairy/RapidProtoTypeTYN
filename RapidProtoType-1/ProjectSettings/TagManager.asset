@@ -9,6 +9,7 @@ TagManager:
   - Balloon
   - CCTV
   - Key
+  - Ground
   layers:
   - Default
   - TransparentFX
