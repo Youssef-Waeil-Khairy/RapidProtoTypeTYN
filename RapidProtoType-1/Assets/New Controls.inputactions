@@ -2,14 +2,23 @@
     "name": "New Controls",
     "maps": [
         {
-            "name": "Shooting",
-            "id": "f9c53db6-6d46-42cf-b965-9cb0bcea101a",
+            "name": "Move",
+            "id": "c6c279e8-82b6-42c1-a69a-d6ed61665768",
             "actions": [
                 {
-                    "name": "AIm",
+                    "name": "Move",
                     "type": "PassThrough",
-                    "id": "862990ed-64b8-4235-a145-164f1ddd66ac",
-                    "expectedControlType": "Button",
+                    "id": "2ddf00e5-429a-4dd0-9f49-0bf4f46a7836",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Look",
+                    "type": "PassThrough",
+                    "id": "d74bb6c5-5f9c-4f1b-bcba-46458ce9613b",
+                    "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -17,13 +26,123 @@
             ],
             "bindings": [
                 {
-                    "name": "",
-                    "id": "fee86eff-aebd-4d0e-a1b8-bca8aa28c1a0",
-                    "path": "<Mouse>/leftButton",
+                    "name": "Keys",
+                    "id": "80f736e7-78c6-4a65-9cc4-41f29d061463",
+                    "path": "2DVector",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "AIm",
+                    "action": "Move",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "up",
+                    "id": "fc2da7ff-6d0a-487b-94f7-3c572f3312a1",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "96f06a9c-3f5a-4470-a822-9be7e8bb3010",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "204004f0-3e44-46ef-b23f-07a8c6ec8c2b",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "e479756c-59b1-4be7-9f21-f5285f183f42",
+                    "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "ArrowKeys",
+                    "id": "2a4aeb35-1215-4383-8e75-62381b349ef7",
+                    "path": "2DVector",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "up",
+                    "id": "25b9da82-dc34-4a7e-b1ca-39d4b2bc7c6c",
+                    "path": "<Keyboard>/upArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "b2a9bd8e-c005-4376-90f1-5816cf316a79",
+                    "path": "<Keyboard>/downArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "beedcecf-b53d-40b5-a00f-33ce400bd356",
+                    "path": "<Keyboard>/leftArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "86ba0935-3c57-4925-b19d-c7e81e9f9ecc",
+                    "path": "<Keyboard>/rightArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "fb881989-6475-402b-8748-493ba54d90fd",
+                    "path": "<Mouse>/delta",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Look",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
