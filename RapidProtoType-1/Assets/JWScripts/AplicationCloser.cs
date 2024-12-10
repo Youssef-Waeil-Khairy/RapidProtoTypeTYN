@@ -15,7 +15,7 @@ namespace JW.GAD210
         // Update is called once per frame
         void Update()
         {
-            if (Input.GetKeyDown(KeyCode.Backspace)) Application.Quit();
+            if (Input.GetKeyDown(KeyCode.Escape)) Application.Quit();
         }
     } 
 }
