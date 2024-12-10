@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DoorOpening : MonoBehaviour
+public class OfficeDoorOpening : MonoBehaviour
 {
     //refrencing the animtor for door/cell gates
     public Animator doorOepning;
