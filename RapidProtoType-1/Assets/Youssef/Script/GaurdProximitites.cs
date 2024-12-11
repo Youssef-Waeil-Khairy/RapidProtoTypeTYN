@@ -78,6 +78,7 @@ public class GaurdProximitites : MonoBehaviour
 
             if(playersAngle <= proximityAngle / 2 ) 
             {
+
                 Debug.Log("u failed");
             }
         }
