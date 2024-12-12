@@ -10,6 +10,10 @@ public class OfficeDoorOpening : MonoBehaviour
     //the parameter in th enaimtor
     public string doorBool = "isDoorOpen";
 
+    public AudioSource audioSource;
+    public AudioClip voiceOver;
+    //play audio once
+    private bool hasPlayedAudio = false;
 
     private void Start()
     {
@@ -27,9 +31,23 @@ public class OfficeDoorOpening : MonoBehaviour
                 doorOepning.SetBool(doorBool, true);
             }
 
-            //destory the coin once its colided
-           Destroy(gameObject);
+            if (!hasPlayedAudio && audioSource != null && voiceOver != null)
+            {
+                audioSource.PlayOneShot(voiceOver);
+                hasPlayedAudio = true;
+            }
+
+            StartCoroutine(DestroyAfterSound());
+
         }
         
+    }
+
+    private IEnumerator DestroyAfterSound()
+    {
+        yield return new WaitForSeconds(voiceOver.length);
+
+        //destory the coin once its colided
+        Destroy(gameObject);
     }
 }
