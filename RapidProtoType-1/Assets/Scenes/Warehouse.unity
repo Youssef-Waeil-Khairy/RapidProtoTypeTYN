@@ -1935,7 +1935,7 @@ GameObject:
   - component: {fileID: 71802534}
   - component: {fileID: 71802533}
   - component: {fileID: 71802532}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9916,6 +9916,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 100000, guid: c3a2e9c7a879b7d41b29957e6f9ed6c0, type: 3}
       insertIndex: -1
       addedObject: {fileID: 502909253}
+    - targetCorrespondingSourceObject: {fileID: 100000, guid: c3a2e9c7a879b7d41b29957e6f9ed6c0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 502909257}
   m_SourcePrefab: {fileID: 100100000, guid: c3a2e9c7a879b7d41b29957e6f9ed6c0, type: 3}
 --- !u!1 &502909252 stripped
 GameObject:
@@ -9943,6 +9946,27 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!65 &502909257
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 502909252}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 5.886516, y: 0.9088853, z: 10.540381}
+  m_Center: {x: -2.9432242, y: -0.40540758, z: 5.2701907}
 --- !u!1 &509456928
 GameObject:
   m_ObjectHideFlags: 0
@@ -23423,6 +23447,7 @@ GameObject:
   - component: {fileID: 1243654538}
   - component: {fileID: 1243654540}
   - component: {fileID: 1243654539}
+  - component: {fileID: 1243654541}
   m_Layer: 0
   m_Name: Table set 1 1 (2)
   m_TagString: Untagged
@@ -23497,6 +23522,27 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1243654537}
   m_Mesh: {fileID: 4856526003229986361, guid: 4d7a1f2d72196e24bb9a9eefb40859c3, type: 3}
+--- !u!65 &1243654541
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1243654537}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3.1147544, y: 1.0153183, z: 0.9571535}
+  m_Center: {x: -1.5431103, y: 0.21325031, z: -0.01218042}
 --- !u!1 &1244051013
 GameObject:
   m_ObjectHideFlags: 0
@@ -25204,6 +25250,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 100000, guid: c3a2e9c7a879b7d41b29957e6f9ed6c0, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1321811553}
+    - targetCorrespondingSourceObject: {fileID: 100000, guid: c3a2e9c7a879b7d41b29957e6f9ed6c0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1321811557}
   m_SourcePrefab: {fileID: 100100000, guid: c3a2e9c7a879b7d41b29957e6f9ed6c0, type: 3}
 --- !u!1 &1321811552 stripped
 GameObject:
@@ -25231,6 +25280,27 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!65 &1321811557
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1321811552}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 5.886515, y: 0.9088851, z: 10.540381}
+  m_Center: {x: -2.9432237, y: -0.4054075, z: 5.2701907}
 --- !u!1 &1325635872
 GameObject:
   m_ObjectHideFlags: 0
@@ -25449,6 +25519,7 @@ GameObject:
   - component: {fileID: 1330544311}
   - component: {fileID: 1330544313}
   - component: {fileID: 1330544312}
+  - component: {fileID: 1330544314}
   m_Layer: 0
   m_Name: Table set 1 1 (1)
   m_TagString: Untagged
@@ -25523,6 +25594,27 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1330544310}
   m_Mesh: {fileID: 4856526003229986361, guid: 4d7a1f2d72196e24bb9a9eefb40859c3, type: 3}
+--- !u!65 &1330544314
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1330544310}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3.1147544, y: 1.0153183, z: 0.9571535}
+  m_Center: {x: -1.5431122, y: 0.2132504, z: -0.012181017}
 --- !u!1 &1338300301
 GameObject:
   m_ObjectHideFlags: 0
@@ -28831,7 +28923,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3294765180013530793, guid: c9ee63791acb6ea4fa23a58e3677e646, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 12.030559
+      value: 12.24
       objectReference: {fileID: 0}
     - target: {fileID: 3294765180013530793, guid: c9ee63791acb6ea4fa23a58e3677e646, type: 3}
       propertyPath: m_LocalRotation.w
@@ -35712,7 +35804,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 127
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 8400000, guid: c2648eb3870d02b4888bc35ea7255115, type: 2}
   m_TargetDisplay: 0
@@ -42346,6 +42438,14 @@ PrefabInstance:
     - target: {fileID: 248432766723752976, guid: f619eacf5a4e66643ac04408a4d5f94c, type: 3}
       propertyPath: m_Name
       value: box
+      objectReference: {fileID: 0}
+    - target: {fileID: 1466485910571304455, guid: f619eacf5a4e66643ac04408a4d5f94c, type: 3}
+      propertyPath: speed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1466485910571304455, guid: f619eacf5a4e66643ac04408a4d5f94c, type: 3}
+      propertyPath: curSpeed
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2297224257001788827, guid: f619eacf5a4e66643ac04408a4d5f94c, type: 3}
       propertyPath: m_Materials.Array.data[0]
