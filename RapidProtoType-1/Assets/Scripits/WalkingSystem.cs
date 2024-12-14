@@ -8,7 +8,7 @@ public class WalkingSystem : MonoBehaviour
 {
     public Rigidbody rb;
     public PlayerControl playerControl;
-
+    public float curSpeed = 0f;
     public float speed = 2f;
 
     float MouseX;
@@ -35,34 +35,21 @@ public class WalkingSystem : MonoBehaviour
 
     void Update()
     {
-
         //Camera Orientation
         MouseX += Input.GetAxis("Mouse X");
-        //MouseY += Input.GetAxis("Mouse Y");
-        //MouseY = Mathf.Clamp(MouseY, -45, 60);
 
         //Application
         transform.rotation = Quaternion.Euler(0, MouseX, 0);
 
-        /*
-        if (direction.magnitude > 0) 
+        if (direction.magnitude != 0)
         {
-            if (!walkingSound.isPlaying)
-            {
-                walkingSound.Play();
-            }
-            else
-            {
-                walkingSound.Stop();
-            }
-
+            curSpeed = Mathf.MoveTowards(curSpeed, speed, Time.deltaTime);
         }
-        */
     }
 
     private void FixedUpdate()
     {
-        Vector3 move = new Vector3(direction.x * speed, rb.velocity.y, direction.y * speed);
+        Vector3 move = new Vector3(direction.x * curSpeed, rb.velocity.y, direction.y * curSpeed);
 
         move = transform.TransformDirection(move);
 

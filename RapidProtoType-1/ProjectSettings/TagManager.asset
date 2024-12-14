@@ -17,7 +17,7 @@ TagManager:
   - CCTVEffects
   - Water
   - UI
-  - 
+  - Minimap
   - 
   - 
   - 
@@ -46,4 +46,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Minimap
+    uniqueID: 1193910567
     locked: 0
