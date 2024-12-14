@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GaurdProximitites : MonoBehaviour
 {
@@ -18,7 +19,11 @@ public class GaurdProximitites : MonoBehaviour
 
     //the player
     public Transform player;
- 
+    public AudioSource prisonAlarm; //AudioSource for the alarm
+    public float alarmDuration = 3f; // Duration to wait before switching scenes
+
+
+
     void Start()
     {
         currentP = pA;
@@ -64,28 +69,46 @@ public class GaurdProximitites : MonoBehaviour
 
         isWaiting = false;
     }
-
     public void DetectPlayer()
     {
-        // get vector from garud to player
+        // Get vector from Garud to player
         Vector3 playerPosition = player.position - transform.position;
 
-        //is player in proximity? IF yes THEN....
-        if(playerPosition.magnitude < proximityRadius) 
+        // Check if the player is within the detection radius
+        if (playerPosition.magnitude < proximityRadius)
         {
-            //get the angle
+            // Get the angle between Garud's forward direction and the player's position
             float playersAngle = Vector3.Angle(transform.forward, playerPosition);
 
-            if(playersAngle <= proximityAngle / 2 ) 
+            // Check if the player is within the detection angle
+            if (playersAngle <= proximityAngle / 2)
             {
-
-                Debug.Log("u failed");
+                // Check if the detected object has the "Player" tag
+                if (player.CompareTag("Player"))
+                {
+                    // Start the coroutine to play the alarm and delay the scene switch
+                    StartCoroutine(PlayAlarmAndSwitchScene());
+                }
             }
         }
-
     }
 
-    private void OnDrawGizmos()
+    private IEnumerator PlayAlarmAndSwitchScene()
+    {
+        // Play the prison alarm sound
+        if (prisonAlarm != null)
+        {
+            prisonAlarm.Play();
+        }
+
+        // Wait for the duration of the alarm
+        yield return new WaitForSeconds(alarmDuration);
+
+        // Change to the "LoseScene"
+        SceneManager.LoadScene("LoseScene");
+    }
+
+private void OnDrawGizmos()
     {
         //helps visualztion for player
         Gizmos.color = Color.red;
