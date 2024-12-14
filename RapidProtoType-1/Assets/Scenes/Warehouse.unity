@@ -3063,15 +3063,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 2be43c7114a359a46a5d6280a1265f32, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 40.48
+      value: 40.428
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2be43c7114a359a46a5d6280a1265f32, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.8235116
+      value: 1.55
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2be43c7114a359a46a5d6280a1265f32, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 31.236
+      value: 34.562
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2be43c7114a359a46a5d6280a1265f32, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3130,28 +3130,40 @@ PrefabInstance:
       value: Surveillance Camera Five
       objectReference: {fileID: 0}
     - target: {fileID: 6641631026110737259, guid: 2be43c7114a359a46a5d6280a1265f32, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6641631026110737259, guid: 2be43c7114a359a46a5d6280a1265f32, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6641631026110737259, guid: 2be43c7114a359a46a5d6280a1265f32, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6641631026110737259, guid: 2be43c7114a359a46a5d6280a1265f32, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.8845407
+      value: 0.904541
       objectReference: {fileID: 0}
     - target: {fileID: 6641631026110737259, guid: 2be43c7114a359a46a5d6280a1265f32, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.26161185
+      value: 0.3646292
       objectReference: {fileID: 0}
     - target: {fileID: 6641631026110737259, guid: 2be43c7114a359a46a5d6280a1265f32, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.37033778
+      value: -0.20499378
       objectReference: {fileID: 0}
     - target: {fileID: 6641631026110737259, guid: 2be43c7114a359a46a5d6280a1265f32, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.1095311
+      value: 0.08263505
       objectReference: {fileID: 0}
     - target: {fileID: 6641631026110737259, guid: 2be43c7114a359a46a5d6280a1265f32, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 32.952
+      value: 43.91
       objectReference: {fileID: 0}
     - target: {fileID: 6641631026110737259, guid: 2be43c7114a359a46a5d6280a1265f32, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -45.436
+      value: -25.538
       objectReference: {fileID: 0}
     - target: {fileID: 6641631026110737259, guid: 2be43c7114a359a46a5d6280a1265f32, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -3202,8 +3214,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pivotPoint: {fileID: 156930094}
   defaultPitch: 1
-  sweepAngle: 60
-  sweepSpeed: 6
+  sweepAngle: 30
+  sweepSpeed: 13
 --- !u!1 &160930569
 GameObject:
   m_ObjectHideFlags: 0
@@ -6187,7 +6199,7 @@ MonoBehaviour:
   pivotPoint: {fileID: 365801544}
   defaultPitch: 1
   sweepAngle: 60
-  sweepSpeed: 6
+  sweepSpeed: 13
 --- !u!1 &366552592
 GameObject:
   m_ObjectHideFlags: 0
@@ -18916,7 +18928,7 @@ MonoBehaviour:
   pivotPoint: {fileID: 1515336284}
   defaultPitch: 1
   sweepAngle: 60
-  sweepSpeed: 6
+  sweepSpeed: 13
 --- !u!1 &1081855377
 GameObject:
   m_ObjectHideFlags: 0
@@ -19558,15 +19570,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 232749314161161261, guid: a22fb26bfc42bb646b09a1233e093338, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.61
+      value: -0.234
       objectReference: {fileID: 0}
     - target: {fileID: 232749314161161261, guid: a22fb26bfc42bb646b09a1233e093338, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.32
+      value: 0.394
       objectReference: {fileID: 0}
     - target: {fileID: 232749314161161261, guid: a22fb26bfc42bb646b09a1233e093338, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.08
+      value: 0.148
       objectReference: {fileID: 0}
     - target: {fileID: 232749314161161261, guid: a22fb26bfc42bb646b09a1233e093338, type: 3}
       propertyPath: m_LocalRotation.w
@@ -26493,7 +26505,7 @@ MonoBehaviour:
   pivotPoint: {fileID: 1514639534}
   defaultPitch: 1
   sweepAngle: 60
-  sweepSpeed: 6
+  sweepSpeed: 13
 --- !u!1001 &1515336283
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -33855,7 +33867,7 @@ MonoBehaviour:
   pivotPoint: {fileID: 1874496077}
   defaultPitch: 1
   sweepAngle: 60
-  sweepSpeed: 6
+  sweepSpeed: 13
 --- !u!1001 &1889367100
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -36816,7 +36828,7 @@ MonoBehaviour:
   pivotPoint: {fileID: 2030849161}
   defaultPitch: 1
   sweepAngle: 60
-  sweepSpeed: 6
+  sweepSpeed: 13
 --- !u!4 &2036203484 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 232749314161161261, guid: a22fb26bfc42bb646b09a1233e093338, type: 3}
@@ -38111,7 +38123,7 @@ MonoBehaviour:
   pivotPoint: {fileID: 2112460411}
   defaultPitch: 1
   sweepAngle: 60
-  sweepSpeed: 6
+  sweepSpeed: 13
 --- !u!1 &2114929218
 GameObject:
   m_ObjectHideFlags: 0
