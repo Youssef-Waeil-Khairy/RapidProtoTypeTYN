@@ -10,6 +10,7 @@ TagManager:
   - CCTV
   - Key
   - Ground
+  - Prisoner
   layers:
   - Default
   - TransparentFX
