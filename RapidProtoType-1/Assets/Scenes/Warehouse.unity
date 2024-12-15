@@ -897,7 +897,7 @@ MonoBehaviour:
   speed: 10
   waitingTime: 1
   proximityAngle: 180
-  proximityRadius: 5
+  proximityRadius: 3
   player: {fileID: 941387242}
   prisonAlarm: {fileID: 29393407}
   alarmDuration: 3
